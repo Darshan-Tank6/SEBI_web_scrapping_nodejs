@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scraped Results</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Optional styling -->
+  </head>
+  <body>
+    <h1>Scraped Data</h1>
+    <% if (Object.keys(data).length > 0) { %>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for (let key in data) { %>
+        <tr>
+          <td><strong><%= key %></strong></td>
+          <td><%= data[key] %></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <p>No records found.</p>
+    <% } %>
+  </body>
+</html>
